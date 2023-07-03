@@ -1,6 +1,7 @@
+# Workflow in my research
 In a research project, there are multiple programming, simulation and writing tasks. Therefore, it is necessary to streamline the workflow to accelerate my research. A typical project layout is like this:
 
-```shell
+```console
 .
 ├── data
 ├── notebooks
@@ -10,7 +11,18 @@ In a research project, there are multiple programming, simulation and writing ta
 └── src
 ```
 
-# Python development
+## Python development
+### Environment management
+I have two local development computer with Ubuntu 20.04 and macOS 13.4.1, respectively. On each system, **Miniconda3** is installed to provide the base **Python** interpreter. Furthermore, 
+
+
+
+There are two options to isolate local development environment
+
+1. Built-in module **venv** available after version 3.3.
+2. Thirdparty **conda** tools
+
+Personally, I prefer to the lightweight solution provided by **venv**. But on macOS, it seems that **conda** is the only option which could leverage Apple's **Accelerate** library. Therefore, I will keep both options in my workflow. 
 ## Thirdparty codes
 I have been a big fan of conda for years. However, I switch to `venv` recently. The python is installed by apt and `python3.8-venv` must be installed.
 ```shell
