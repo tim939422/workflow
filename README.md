@@ -1,28 +1,41 @@
 # Workflow in my research
-In a research project, there are multiple programming, simulation and writing tasks. Therefore, it is necessary to streamline the workflow to accelerate my research. A typical project layout is like this:
-
-```console
-.
-├── data
-├── notebooks
-├── README.md
-├── references
-├── scripts
-└── src
-```
+In a research project, there are multiple programming, simulation and writing tasks. Therefore, it is necessary to streamline the workflow to accelerate my research.
 
 ## Python development
+**Python** is my primary programming language for analysis code and quick model implementation. For my typical workload, lightweight **Visual Studio Code** is a decent choice of development environment.
 ### Environment management
-I have two local development computer with Ubuntu 20.04 and macOS 13.4.1, respectively. On each system, **Miniconda3** is installed to provide the base **Python** interpreter. Furthermore, 
+It is always a good idea to isolate **Python** environment where thirdparty packages are installed. Several options are available, however, I prefer to use the built-in **venv** module due to its simplicity. On **macOS** with brand new **Apple Silicon**, **numpy** has kind of performance issue since the absence of **MKL** library and a possible fix is by using **conda** and leveraging Apple's **Accelerate** library (see [issue](https://github.com/conda-forge/numpy-feedstock/issues/253)). However, after my own [experiment](https://github.com/tim939422/python_apple_silicon), the performance different is not significant enough and I will stay with **venv**. It is pretty straightforward to install packages inside a virtual environment via **pip** but the only two remarks are made here:
+    
+1. use module method instead of the command itself, i.e., 
 
+    `python -m pip install <package name>`
 
+    instead of
 
-There are two options to isolate local development environment
+    `pip install <package name>`
+    
+2. upgrade **pip** first:
+    
+    `python -m pip install --upgrade pip`
 
-1. Built-in module **venv** available after version 3.3.
-2. Thirdparty **conda** tools
+A environment is portable by creating a `requirements.txt`
+```
+python -m pip freeze > requirements.txt
+python -m pip install -r requirements.txt
+```
+Since I use only a small collection of packages,
 
-Personally, I prefer to the lightweight solution provided by **venv**. But on macOS, it seems that **conda** is the only option which could leverage Apple's **Accelerate** library. Therefore, I will keep both options in my workflow. 
+- numpy
+- scipy
+- pandas
+- scikit-learn
+- matplotlib
+- notebook
+- pytest
+
+This file is provided in this template repo for quick start.
+### Configure Visual Studio Code
+
 ## Thirdparty codes
 I have been a big fan of conda for years. However, I switch to `venv` recently. The python is installed by apt and `python3.8-venv` must be installed.
 ```shell

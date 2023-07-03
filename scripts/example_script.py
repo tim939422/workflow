@@ -5,3 +5,6 @@ for path in os.environ.get('PYTHONPATH','').split(os.pathsep):
 
 from package_a import foo
 foo.func_1()
+
+import numpy as np
+np.loadtxt('data/sample_data.txt', skiprows=2)
