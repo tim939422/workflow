@@ -59,4 +59,9 @@ import sys
 sys.path.append('<absolute path to package root (src)>')
 from package_a import foo
 ```
+
+## Unit testing
+
+
 # Reference management
+Obsidian to take notes
