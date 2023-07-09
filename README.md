@@ -76,5 +76,10 @@ from package_a import foo
 ## Unit testing
 
 
-# Reference management
+## Reference management
 Obsidian to take notes
+
+## Miscs
+### Virtual Machine
+Sometimes, I want to test a new software relying on multiple thirdparty packages
+Use *Guest Additions CD image* to solve the small screen problem
